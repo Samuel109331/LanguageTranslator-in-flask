@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ word }}</title>
+</head>
+<body>
+    <button onclick="speak()" 
+type="button" value="Play">Play</button>
+    <p>Translated to <b>{{ lang }}</b></p>
+    <h1> {{ spanish }} </h1>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=GqYrxRYv"></script>
+    <script>
+        function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+function speak() {
+    transLang=capitalizeFirstLetter(document.querySelector('b').innerHTML);
+    responsiveVoice.speak(document.querySelector('h1').innerHTML,`${transLang} Male`);
+}
+    </script>
+</body>
+</html>
